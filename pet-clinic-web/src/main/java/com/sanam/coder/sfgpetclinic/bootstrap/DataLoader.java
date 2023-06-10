@@ -7,8 +7,6 @@ import com.sanam.coder.sfgpetclinic.model.Owner;
 import com.sanam.coder.sfgpetclinic.model.Vet;
 import com.sanam.coder.sfgpetclinic.services.OwnerService;
 import com.sanam.coder.sfgpetclinic.services.VetService;
-import com.sanam.coder.sfgpetclinic.services.map.OwnerMapService;
-import com.sanam.coder.sfgpetclinic.services.map.VetMapService;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -16,11 +14,15 @@ public class DataLoader implements CommandLineRunner {
 	private final OwnerService ownerService;
 	private final VetService vetService;
 	
-	public DataLoader() {
-		ownerService = new OwnerMapService();
-		vetService = new VetMapService();
-	}
 	
+	
+	public DataLoader(OwnerService ownerService, VetService vetService) {
+		this.ownerService = ownerService;
+		this.vetService = vetService;
+	}
+
+
+
 	@Override
 	public void run(String... args) throws Exception {
 		
