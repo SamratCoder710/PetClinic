@@ -4,8 +4,9 @@ import java.util.Set;
 
 import com.sanam.coder.sfgpetclinic.model.Owner;
 import com.sanam.coder.sfgpetclinic.services.CrudService;
+import com.sanam.coder.sfgpetclinic.services.OwnerService;
 
-public class OwnerMapService extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long> {
+public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService {
 
 	@Override
 	public Set<Owner> findAll(){
@@ -30,6 +31,11 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
 	@Override
 	public void delete(Owner object) {
 		super.delete(object);
+	}
+
+	@Override
+	public Owner findByLastName(String lastName) {
+		return null;
 	}
 
 }
