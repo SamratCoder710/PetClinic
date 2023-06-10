@@ -1,0 +1,35 @@
+package com.sanam.coder.sfgpetclinic.services.map;
+
+import java.util.Set;
+
+import com.sanam.coder.sfgpetclinic.model.Pet;
+import com.sanam.coder.sfgpetclinic.services.CrudService;
+
+public class PetMapService extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
+
+	@Override
+	public Set<Pet> findAll(){
+		return super.findAll();
+	}
+	
+	@Override
+	public Pet save(Pet object) {
+		return super.save(object.getId(), object);
+	}
+
+	@Override
+	public Pet findById(Long id) {
+		return super.findById(id);
+	}
+
+	@Override
+	public void deleteById(Long id) {
+		super.deleteById(id);
+	}
+
+	@Override
+	public void delete(Pet object) {
+		super.delete(object);
+	}
+
+}
