@@ -14,14 +14,16 @@ public class VetMapService extends AbstractMapService<Vet, Long> implements VetS
 	private final SpecialityService specialityService;
 	
 	public VetMapService(SpecialityService specialityService) {
-        this.specialityService = specialityService;
-    }
-	
+		super();
+		this.specialityService = specialityService;
+	}
+
 	@Override
 	public Set<Vet> findAll(){
 		return super.findAll();
 	}
-	
+
+
 	@Override
 	public Vet save(Vet object) {
 		 if (object.getSpecialities().size() > 0){
