@@ -21,5 +21,10 @@ public class OwnerController {
 		m.addAttribute("owners", ownerService.findAll());
 		return "owners/index";
 	}
+	
+	@RequestMapping("/find")
+	public String error() {
+		return "notFound";
+	}
 
 }
