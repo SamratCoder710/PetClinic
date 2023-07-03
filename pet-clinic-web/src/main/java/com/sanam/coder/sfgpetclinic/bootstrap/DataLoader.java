@@ -63,25 +63,22 @@ public class DataLoader implements CommandLineRunner {
 		PetType cat = new PetType();
 		cat.setName("Cat");
 		PetType savedCatPetType = petTypeService.save(cat);
-		
-		 Speciality radiology = new Speciality();
-	        radiology.setDescription("Radiology");
-	        Speciality savedRadiology = specialtyService.save(radiology);
 
-	        Speciality surgery = new Speciality();
-	        surgery.setDescription("Surgery");
-	        Speciality savedSurgery = specialtyService.save(surgery);
+		Speciality radiology = new Speciality();
+		radiology.setDescription("Radiology");
+		Speciality savedRadiology = specialtyService.save(radiology);
 
-	        Speciality dentistry = new Speciality();
-	        dentistry.setDescription("dentistry");
-	        Speciality savedDentistry = specialtyService.save(dentistry);
+		Speciality surgery = new Speciality();
+		surgery.setDescription("Surgery");
+		Speciality savedSurgery = specialtyService.save(surgery);
+
+		Speciality dentistry = new Speciality();
+		dentistry.setDescription("dentistry");
+		Speciality savedDentistry = specialtyService.save(dentistry);
 		
-		Owner owner1 = new Owner();
-		owner1.setFirstName("Kaleen");
-		owner1.setLastName("Bhaiya");
-		owner1.setAddress("123 Brickerlane");
-		owner1.setCity("Mirzapur");
-		owner1.setTelephone("123-456-789");
+		
+		Owner owner1 = Owner.builder().firstName("Kaleen").lastName("Bhaiya").address("123 Brickerlane")
+				.city("Mirzapur").telephone("123-456-789").build();
 		
 		Pet mikesPet = new Pet();
 		mikesPet.setPetType(savedDogPetType);
@@ -93,13 +90,9 @@ public class DataLoader implements CommandLineRunner {
 		
 		ownerService.save(owner1);
 		
-		Owner owner2 = new Owner();
-		owner2.setFirstName("Guddu");
-		owner2.setLastName("Pandit");
-		owner2.setAddress("7 Avenue Street");
-		owner2.setCity("New york");
-		owner2.setTelephone("0111-456-789");
-		
+		Owner owner2 = Owner.builder().firstName("Guddu").lastName("Pandit").address("7 Avenue Street")
+			.city("New york").telephone("0111-456-789").build();
+			
 		
 		Pet gudduPet = new Pet();
 		gudduPet.setPetType(savedCatPetType);
@@ -121,16 +114,11 @@ public class DataLoader implements CommandLineRunner {
 		System.out.println("Loaded Owners..");
 		
 		
-		Vet vet1 = new Vet();
-		vet1.setFirstName("Rashid");
-		vet1.setLastName("Khan");
+		Vet vet1 = Vet.builder().firstName("Rashid").lastName("Khan").build();
 		vet1.getSpecialities().add(savedRadiology);
 		vetService.save(vet1);
 		
-		Vet vet2 = new Vet();
-		vet2.setId(2L);
-		vet2.setFirstName("Henry");
-		vet2.setLastName("Klasen");
+		Vet vet2 = Vet.builder().firstName("Henry").lastName("Klasen").build();
 		vet2.getSpecialities().add(savedSurgery);
 		vetService.save(vet2);
 		System.out.println("Loaded Vets..");

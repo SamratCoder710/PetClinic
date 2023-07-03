@@ -12,6 +12,7 @@ import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -27,5 +28,10 @@ public class Vet extends Person {
 	@JoinTable(name="vet_specialities",joinColumns = @JoinColumn(name="vet_id"),
 	inverseJoinColumns = @JoinColumn(name = "speciality_id") )
 	private Set<Speciality> specialities = new HashSet<>();
+
+	@Builder
+	public Vet(String firstName, String lastName) {
+		super(firstName, lastName);
+	}
 
 }
