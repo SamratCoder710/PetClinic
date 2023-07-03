@@ -2,6 +2,7 @@ package com.sanam.coder.sfgpetclinic.services.map;
 
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import com.sanam.coder.sfgpetclinic.model.Speciality;
@@ -9,6 +10,7 @@ import com.sanam.coder.sfgpetclinic.model.Vet;
 import com.sanam.coder.sfgpetclinic.services.SpecialityService;
 import com.sanam.coder.sfgpetclinic.services.VetService;
 @Service
+@Profile({"default","map"})
 public class VetMapService extends AbstractMapService<Vet, Long> implements VetService {
 
 	private final SpecialityService specialityService;
