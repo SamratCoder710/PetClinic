@@ -4,10 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.MockitoAnnotations;
-import org.springframework.boot.test.context.SpringBootTest;
-
-import com.sanam.coder.sfgpetclinic.model.Pet;
+import com.sanam.coder.sfgpetclinic.controllers.IndexController;
 
 
 public class IndexControllerTest {
