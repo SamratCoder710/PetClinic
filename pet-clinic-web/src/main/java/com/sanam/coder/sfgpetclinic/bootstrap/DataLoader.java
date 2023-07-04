@@ -80,11 +80,8 @@ public class DataLoader implements CommandLineRunner {
 		Owner owner1 = Owner.builder().firstName("Kaleen").lastName("Bhaiya").address("123 Brickerlane")
 				.city("Mirzapur").telephone("123-456-789").build();
 		
-		Pet mikesPet = new Pet();
-		mikesPet.setPetType(savedDogPetType);
-		mikesPet.setOwner(owner1);
-		mikesPet.setBirthDate(LocalDate.now());
-		mikesPet.setName("Rosco");
+		Pet mikesPet = Pet.builder().petType(savedDogPetType).owner(owner1).birthDate(LocalDate.now())
+							.name("Rosco").build();
 		owner1.getPets().add(mikesPet);
 		
 		
@@ -94,15 +91,22 @@ public class DataLoader implements CommandLineRunner {
 			.city("New york").telephone("0111-456-789").build();
 			
 		
-		Pet gudduPet = new Pet();
-		gudduPet.setPetType(savedCatPetType);
-		gudduPet.setOwner(owner2);
-		gudduPet.setBirthDate(LocalDate.now());
-		gudduPet.setName("Tawde");
+		Pet gudduPet = Pet.builder().petType(savedCatPetType).owner(owner2).birthDate(LocalDate.now())
+				.name("Tawde").build();
 		
 		owner2.getPets().add(gudduPet);
 		
 		ownerService.save(owner2);
+		
+		Owner owner3 = Owner.builder().firstName("Bablu").lastName("Pandit").address("123 Magadh")
+				.city("Dwarka").telephone("1235-456-789").build();
+		
+		Pet babluPet = Pet.builder().petType(savedDogPetType).owner(owner3).birthDate(LocalDate.now())
+							.name("Zayn").build();
+		owner3.getPets().add(babluPet);
+		
+		
+		ownerService.save(owner3);
 
 		Visit catVisit = new Visit();
 		catVisit.setPet(gudduPet);
