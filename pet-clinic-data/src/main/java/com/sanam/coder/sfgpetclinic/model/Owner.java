@@ -12,11 +12,13 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @Entity
+@ToString
 @Table(name = "owners")
 public class Owner extends Person {
 	
