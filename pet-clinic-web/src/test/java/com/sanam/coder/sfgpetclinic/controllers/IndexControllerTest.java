@@ -1,17 +1,17 @@
 package com.sanam.coder.sfgpetclinic.controllers;
 
-import static org.junit.Assert.*;
 
-import org.junit.Before;
-import org.junit.Test;
-import com.sanam.coder.sfgpetclinic.controllers.IndexController;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 
 public class IndexControllerTest {
 	
 	IndexController indexController;
 
-	@Before
+	@BeforeEach
 	public void setUp() throws Exception {
 		indexController = new IndexController();
 	}
